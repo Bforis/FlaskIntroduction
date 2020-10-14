@@ -1,0 +1,45 @@
+With Powershell
+
+Regrouper tout les fichiers/dossiers sous un dossier qui sera l'App (sauf config.py & run.py)
+Static : CSS/JS... files
+Templates : HTML files
+
+Install environment python : 
+> python3 -m venv <env>
+
+Launch environment : 
+> ./env/scripts/activate.ps1
+
+Install Flask :
+> pip install flask
+
+Launch Server :
+> python run.py (or app.py)
+
+If SQLite : { Connecter la base de donnée dans __init__.py
+    Install SQLAlchemy : 
+    > pip install flask_sqlalchemy
+    Docs : https://docs.sqlalchemy.org/en/13/orm/index.html
+
+    Import models (in flask console) :
+    >>> from fbapp.models import db, Content
+
+    Add item in db :
+    >>> db.session.add(Content("What's your favorite scary movie ?", 0))
+    Commit operation :
+    >>> db.session.commit()
+    Get all items :
+    >>> Content.query.all()
+    Create link with one item :
+    >>> content = Content.query.get(1)
+    Get Description of this item :
+    >>> content.description
+    .... (See DOCS)
+}
+
+Flask Console : 
+> set FLASK_APP=app.py
+> flask shell
+
+if FSADeprecationWarning : 
+SQLALCHEMY_TRACK_MODIFICATIONS = False in config.py
