@@ -43,3 +43,9 @@ Flask Console :
 
 if FSADeprecationWarning : 
 SQLALCHEMY_TRACK_MODIFICATIONS = False in config.py
+
+++ WITH VUE ++
+
+> pip install Flask-Cors
+Create new vue app in "front" file at the root. 
+$ npm install axios --save
