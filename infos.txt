@@ -41,6 +41,11 @@ Flask Console :
 > set FLASK_APP=app.py
 > flask shell
 
+Generate secrey_key:
+>python
+> import os
+> os.urandom(24)
+
 if FSADeprecationWarning : 
 SQLALCHEMY_TRACK_MODIFICATIONS = False in config.py
 
